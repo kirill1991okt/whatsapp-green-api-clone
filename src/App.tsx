@@ -1,8 +1,19 @@
 import React from 'react';
-import './App.css';
 
-function App() {
-  return <h1>Hello!!!</h1>;
-}
+import Sidebar from './components/Sidebar';
+import Chat from './components/Chat';
+
+import styles from './app.module.scss';
+
+const App: React.FC = () => {
+  return (
+    <div className={styles.app}>
+      <div className={styles.body}>
+        <Sidebar />
+        <Chat />
+      </div>
+    </div>
+  );
+};
 
 export default App;
