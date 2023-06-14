@@ -11,7 +11,6 @@ const Sidebar: React.FC = () => {
   const [rooms, setRooms] = React.useState([]);
 
   useEffect(() => {}, []);
-  const addNewChat = () => {};
 
   return (
     <div className={styles.sidebar}>
@@ -35,7 +34,6 @@ const Sidebar: React.FC = () => {
       </div>
 
       <div className={styles.chats}>
-        <SidebarChat addNewChat={addNewChat} />
         <SidebarChat />
         <SidebarChat />
       </div>

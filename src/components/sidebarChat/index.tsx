@@ -4,24 +4,14 @@ import { stringRandomGeneration } from '../../utils/stringRandomGeneration';
 
 import styles from './sidebarChat.module.scss';
 
-type ChatPropsType = {
-  addNewChat?: () => void;
-};
-
-const SidebarChat: React.FC<ChatPropsType> = ({ addNewChat }) => {
+const SidebarChat: React.FC = () => {
   const [seed, setSeed] = React.useState<string>('');
 
   React.useEffect(() => {
     setSeed(stringRandomGeneration());
   }, []);
 
-  const createChat = () => {
-    const roomName = prompt('Please enter name for chat');
-    if (roomName) {
-      //add information
-    }
-  };
-  return !addNewChat ? (
+  return (
     <div className={styles.chat}>
       <Avatar
         className={styles.avatar}
@@ -31,10 +21,6 @@ const SidebarChat: React.FC<ChatPropsType> = ({ addNewChat }) => {
         <h2>Room name</h2>
         <p>Last message...</p>
       </div>
-    </div>
-  ) : (
-    <div className={styles.chat} onClick={createChat}>
-      <h2>Add new chat</h2>
     </div>
   );
 };
